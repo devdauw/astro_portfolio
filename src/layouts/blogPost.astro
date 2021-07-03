@@ -1,0 +1,22 @@
+---
+import TopNavigation from '../components/TopNavigation.astro';
+
+const { content } = Astro.props;
+console.log(content);
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JDen | {content.title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/style/global.css">
+</head>
+<body>
+    <TopNavigation />
+    <main>
+        <slot />
+    </main>
+</body>
+</html>
