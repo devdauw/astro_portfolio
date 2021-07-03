@@ -1,0 +1,36 @@
+<style lang="scss">
+    header {
+      grid-area: header;
+      box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+
+      .navLogoAndName {
+        a {
+          text-decoration: none;
+        }
+
+        .navName {
+          font-size: 32px;
+        }
+      }
+    }
+</style>
+
+<header>
+    <nav>
+        <div class="navLogoAndName">
+            <a href="/" class="linkBlock">
+                <span class="navName">JDen</span>
+            </a>
+        </div>
+        <div class="navLinks">
+            <a href="/blog">Blog</a>
+        </div>
+    </nav>
+</header>
