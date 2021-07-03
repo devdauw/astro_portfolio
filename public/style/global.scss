@@ -21,6 +21,13 @@ body {
   grid-template-areas:
       "header header header"
       "main main main";
+
+  @media screen and (min-width: 1260px) {
+    grid-template-rows: 5vh 5vh auto;
+    grid-template-areas:
+    "header header header"
+    ". . ."
+    ". main .";
 }
 
 main {
@@ -35,11 +42,6 @@ main {
   }
 }
 
-@media screen and (min-width: 1260px) {
-  body {
-    grid-template-areas:
-      "header header header"
-      ". main .";
-  }
+
 
 }
