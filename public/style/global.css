@@ -14,13 +14,13 @@ body {
   width: 100%;
   min-height: 100vh;
   display: grid;
+  background: #f9fafb;
+  color: #111827;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 5vh auto;
   grid-template-areas:
       "header header header"
       "main main main";
-  background: #f9fafb;
-  color: #111827;
 }
 
 main {
@@ -33,4 +33,13 @@ main {
     background: #111827;
     color: #fff;
   }
+}
+
+@media screen and (min-width: 1260px) {
+  body {
+    grid-template-areas:
+      "header header header"
+      ". main .";
+  }
+
 }

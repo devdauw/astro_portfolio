@@ -1,8 +1,8 @@
 ---
 import TopNavigation from '../components/TopNavigation.astro';
+import ThoughtCard from '../components/ThoughtCard.astro';
 
 let allBlogPosts = Astro.fetchContent('./blog_posts/*.md');
-console.log({allBlogPosts});
 
 let title = 'JDen blog';
 ---
@@ -20,13 +20,7 @@ let title = 'JDen blog';
     <main>
         {
             allBlogPosts.map((post) => (
-                <div>
-                    <h3>{post.title}</h3>
-                    <article>
-                        {post.abstract}
-                        <a href={post.url}>Read entry</a>
-                    </article>
-                </div>
+                <ThoughtCard post={post} />
             )
         )}
     </main>
