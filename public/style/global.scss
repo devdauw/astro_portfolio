@@ -35,6 +35,10 @@ main {
   margin: 1.5vh 2vw 0 2vw;
 }
 
+p {
+  margin-bottom: 20px;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #111827;
