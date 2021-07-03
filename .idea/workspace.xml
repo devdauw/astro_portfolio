@@ -12,10 +12,9 @@
       <change afterPath="$PROJECT_DIR$/public/assets/logo.svg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/favicon.svg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ThoughtCard.astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/style/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/style/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/style/home.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TopNavigation.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopNavigation.astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
@@ -68,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625304776680</updated>
-      <workItem from="1625304780780" duration="6183000" />
+      <workItem from="1625304780780" duration="6482000" />
     </task>
     <servers />
   </component>
