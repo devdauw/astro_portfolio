@@ -9,8 +9,14 @@ let title = 'JDen thoughts';
 <style lang="scss">
     .thoughtsIntro {
         display: flex;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         align-items: center;
+        justify-content: center;
+
+        @media screen and (min-width: 1260px) {
+            justify-content: flex-start;
+            margin-bottom: 50px;
+        }
 
         .thoughtsImage { 
             border-radius: 50%;
