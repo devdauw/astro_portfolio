@@ -1,3 +1,7 @@
+$accent: #074587;
+$link-color: #2077d3;
+$link-color-visited: #D44035;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,6 +12,9 @@
   font-size: 1rem;
   --user-font-scale: 1rem - 16px;
   font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
+  --accent: #{$accent};
+  --link-color: #{$link-color};
+  --link-color-visited: #{$link-color-visited};
 }
 
 body {
@@ -37,6 +44,14 @@ main {
 
 p {
   margin-bottom: 20px;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--link-color-visited);
 }
 
 @media (prefers-color-scheme: dark) {

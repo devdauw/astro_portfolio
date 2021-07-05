@@ -2,8 +2,14 @@
 const { post } = Astro.props;
 ---
 <style lang="scss">
+  .post-title {
+    text-decoration: none;
+  }
+
     h3 {
+      font-size: 25px;
       margin-bottom: 10px;
+      color: var(--link-color);
     }
 
     article {
@@ -15,7 +21,7 @@ const { post } = Astro.props;
     }
 </style>
 <div>
-    <h3>{post.title}</h3>
+    <a href={post.url} class="post-title"><h3>{post.title}</h3></a>
     <article>
         <span>{post.abstract}</span>
         <a href={post.url}>Read entry</a>

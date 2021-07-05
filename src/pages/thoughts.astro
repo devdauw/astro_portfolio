@@ -6,6 +6,27 @@ let allBlogPosts = Astro.fetchContent('./blog_posts/*.md');
 
 let title = 'JDen thoughts';
 ---
+<style lang="scss">
+    .thoughtsIntro {
+        display: flex;
+        margin-bottom: 50px;
+        align-items: center;
+
+        .thoughtsImage { 
+            border-radius: 50%;
+            height: 50px;
+            margin-right: 25px;
+        }
+
+        .thoughtsText {
+            margin: 0;
+            
+            a {
+                color: var(--accent);
+            }
+        }
+    }
+</style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,10 +38,18 @@ let title = 'JDen thoughts';
 <body>
     <TopNavigation />
     <main>
+
+        <div class="thoughtsIntro">
+            <img src="/assets/avatar.jpg" alt="" class="thoughtsImage">
+            <p class="thoughtsText">Personal thoughts by <a href="/">Julien Dendauw</a>.
+            <br>More of a journal than a blog.</p>
+        </div>
         {
-            allBlogPosts.map((post) => (
-                <ThoughtCard post={post} />
-            )
+            allBlogPosts.map((post) => {
+                if (post.published) {
+                    return <ThoughtCard post={post} />
+                }
+            }
         )}
     </main>
 </body>
