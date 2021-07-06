@@ -3,3 +3,5 @@ Allow: /
 
 User-agent: AdsBot-Google
 Disallow: /
+
+Sitemap: https://dendauw.tech/sitemap.xml
