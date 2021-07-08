@@ -1,6 +1,6 @@
 $accent: #074587;
-$link-color: #2077d3;
-$link-color-visited: #D44035;
+$link: #2077d3;
+$link-visited: #D44035;
 
 @font-face {
   font-family: 'Comfortaa';
@@ -18,8 +18,8 @@ $link-color-visited: #D44035;
   --user-font-scale: 1rem - 16px;
   font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
   --accent: #{$accent};
-  --link-color: #{$link-color};
-  --link-color-visited: #{$link-color-visited};
+  --link: #{$link};
+  --link-visited: #{$link-visited};
 }
 
 body {
@@ -52,11 +52,11 @@ p {
 }
 
 a {
-  color: var(--link-color);
+  color: var(--link);
 }
 
 a:visited {
-  color: var(--link-color-visited);
+  color: var(--link-visited);
 }
 
 @media (prefers-color-scheme: dark) {

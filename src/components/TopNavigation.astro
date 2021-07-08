@@ -7,13 +7,8 @@
     nav {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-around;
       height: 100%;
-
-      @media screen and (min-width: 1260px) {
-        justify-content: space-around;
-      }
-
 
       .navLogoAndName {
         .linkBlock {
@@ -22,50 +17,69 @@
           text-decoration: none;
 
           .navLogo {
-            width: 40px;
-            height: 40px;
-            padding: 2px;
-            border-radius: 10px;
-            border: 1px solid var(--accent);
-            margin-right: 10px;
+            display: none;
   
             @media screen and (min-width: 1260px) {
+              display: inline;
               width: 50px;
               height: 50px;
               padding: 5px;
               margin-right: 25px;
+              border-radius: 10px;
+              border: 2px solid var(--link);
             }
           }
 
+          h1 {
+            font-family: Comfortaa, cursive;
+            font-size: 20px;
 
+            @media screen and (min-width: 1260px) {
+              font-size: 40px;
+            }
+          }
+
+          .nameBigScreen {
+            display: none;
+          }
+
+          @media screen and (min-width: 1260px) {
+            .nameSmallScreen {
+              display: none;
+            }
+            
+            .nameBigScreen {
+              display: inline;
+            }
+          }
+
+          .navSurname {
+            color: var(--link);
+          }
           .navName {
             color: var(--accent);
-            font-size: 40px;
-            font-family: Comfortaa, cursive;
-            margin-bottom: -6px; /* Font as a 6px dead space under it */
           }
         }
       }
 
       .navLinks a  {
-        color: var(--link-color);
+        color: var(--link);
         margin-right: 10px;
         font-family: Comfortaa, cursive;
       }
     }
 </style>
-
 <header>
     <nav>
         <div class="navLogoAndName">
             <a href="/" class="linkBlock">
                 <img src = "/jd_logo.svg" alt="" class="navLogo"/>
-                <h1 class="navName">JDen</h1>
+                <h1 class="nameSmallScreen"><span class="navSurname">j</span><span class="navName">den</span></h1>
+                <h1 class="nameBigScreen"><span class="navSurname">julien</span><span class="navName">dendauw</span></h1>
             </a>
         </div>
         <div class="navLinks">
-          <a href="/thoughts">Thoughts</a>
-          <a href="mailto:julien@dendauw.tech?subject=Contact dendauw.tech">email me</a>
-        </div>
+          <a href="/thoughts">thoughts</a>
+          <a href="mailto:julien@dendauw.tech?subject=Contact from dendauw.tech">email me
     </nav>
 </header>
