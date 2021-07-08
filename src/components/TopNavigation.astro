@@ -7,8 +7,12 @@
     nav {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       height: 100%;
+
+      @media screen and (min-width: 1260px) {
+        justify-content: space-around;
+      }
 
 
       .navLogoAndName {
@@ -18,13 +22,21 @@
           text-decoration: none;
 
           .navLogo {
-            width: 50px;
-            height: 50px;
-            padding: 5px;
+            width: 40px;
+            height: 40px;
+            padding: 2px;
             border-radius: 10px;
             border: 1px solid var(--accent);
-            margin-right: 25px;
+            margin-right: 10px;
+  
+            @media screen and (min-width: 1260px) {
+              width: 50px;
+              height: 50px;
+              padding: 5px;
+              margin-right: 25px;
+            }
           }
+
 
           .navName {
             color: var(--accent);
