@@ -1,9 +1,31 @@
 ---
 import TopNavigation from '../components/TopNavigation.astro';
+import Footer from '../components/Footer.astro';
 
 let title = 'JDen portfolio';
 ---
 <style lang="scss">
+    .indexIntro {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+
+        .introText {
+            font-family: Comfortaa, cursive;
+            font-weight: 1000;
+            font-size: 20px;
+
+            @media screen and (min-width: 1260px) {
+                font-size: 45px;
+            }
+        }
+
+        .introImage {
+            border-radius: 50%;
+            height: 150px;
+            margin-right: 25px;
+        }
+    }
 
 </style>
 <html lang="en">
@@ -18,8 +40,13 @@ let title = 'JDen portfolio';
     <TopNavigation />
     <main>
         <article>
+            <div class="indexIntro">
+                <img src="/assets/images/avatar.jpg" alt="" class="introImage">
+                <h2 class="introText">Hello, I'm Julien</h2>
+            </div>
+
             <p>
-                Hello! This will someday be my portfolio website. It uses <a href="https://astro.build/">Astro</a> as a framework. If you are here because I'm looking for a job: you can <a href="https://github.com/Dauwbot/astro_portfolio/tree/develop">read the source-code of this website on Github</a>. It's deployed with <a href="https://www.netlify.com/">Netlify</a>.
+                This will someday be my portfolio website. It uses <a href="https://astro.build/">Astro</a> as a framework. If you are here because I'm looking for a job: you can <a href="https://github.com/Dauwbot/astro_portfolio/tree/develop">read the source-code of this website on Github</a>. It's deployed with <a href="https://www.netlify.com/">Netlify</a>.
             </p>
             <p>
                 The web is getting more intricate by the day and <a href="https://motherfuckingwebsite.com/">going back</a> to <a href="http://bettermotherfuckingwebsite.com/">simpler times</a> is something <a href="https://thebestmotherfucking.website/">we could all benefit</a> from, like in our everyday lives!
@@ -38,5 +65,6 @@ let title = 'JDen portfolio';
             </ul>
         </article>
     </main>
+    <!-- <Footer /> -->
 </body>
 </html>

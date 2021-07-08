@@ -7,8 +7,14 @@
     nav {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
+      padding: 0 10px;
       height: 100%;
+
+      @media screen and (min-width: 1260px) {
+        justify-content: space-around;
+        padding: 0;
+      }
 
       .navLogoAndName {
         .linkBlock {
@@ -73,7 +79,7 @@
     <nav>
         <div class="navLogoAndName">
             <a href="/" class="linkBlock">
-                <img src = "/jd_logo.svg" alt="" class="navLogo"/>
+                <img src = "/assets/images/d_logo.svg" alt="" class="navLogo"/>
                 <h1 class="nameSmallScreen"><span class="navSurname">j</span><span class="navName">den</span></h1>
                 <h1 class="nameBigScreen"><span class="navSurname">julien</span><span class="navName">dendauw</span></h1>
             </a>

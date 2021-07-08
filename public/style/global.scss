@@ -32,20 +32,31 @@ body {
   grid-template-rows: 50px auto;
   grid-template-areas:
       "header header header"
-      "main main main";
+      "main main main"
+      "footer footer footer";
 
   @media screen and (min-width: 1260px) {
     grid-template-rows: 75px 5vh auto;
     grid-template-areas:
     "header header header"
     ". . ."
-    ". main .";
+    ". main ."
+    ". . ."
+    "footer footer footer";
 }
 
 main {
   grid-area: main;
   margin: 3vh 2vw 0 2vw;
 }
+
+footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 
 p {
   margin-bottom: 20px;
