@@ -12,19 +12,33 @@
 
 
       .navLogoAndName {
-        a {
+        .linkBlock {
+          display: flex;
+          align-items: center;
           text-decoration: none;
-        }
 
-        .navName {
-          color: var(--accent);
-          font-size: 32px;
+          .navLogo {
+            width: 50px;
+            height: 50px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid var(--accent);
+            margin-right: 25px;
+          }
+
+          .navName {
+            color: var(--accent);
+            font-size: 40px;
+            font-family: Comfortaa, cursive;
+            margin-bottom: -6px; /* Font as a 6px dead space under it */
+          }
         }
       }
 
       .navLinks a  {
         color: var(--link-color);
         margin-right: 10px;
+        font-family: Comfortaa, cursive;
       }
     }
 </style>
@@ -33,11 +47,13 @@
     <nav>
         <div class="navLogoAndName">
             <a href="/" class="linkBlock">
+                <img src = "/jd_logo.svg" alt="" class="navLogo"/>
                 <h1 class="navName">Julien Dendauw</h1>
             </a>
         </div>
         <div class="navLinks">
           <a href="/thoughts">Thoughts</a>
+          <a href="mailto:julien@dendauw.tech?subject=Contact dendauw.tech">send me an email</a>
         </div>
     </nav>
 </header>

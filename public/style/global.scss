@@ -2,6 +2,11 @@ $accent: #074587;
 $link-color: #2077d3;
 $link-color-visited: #D44035;
 
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/assets/fonts/Comfortaa-Regular.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
