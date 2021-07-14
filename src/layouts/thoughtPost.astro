@@ -3,7 +3,6 @@ import TopNavigation from '../components/TopNavigation.astro';
 
 const { content } = Astro.props;
 ---
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +12,7 @@ const { content } = Astro.props;
     <link rel="stylesheet" href="/style/global.css">
 </head>
 <body>
+    <header />
     <TopNavigation />
     <main>
         <slot />
