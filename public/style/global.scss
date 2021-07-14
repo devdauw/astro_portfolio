@@ -83,6 +83,20 @@ body {
   a:visited {
     color: var(--link-visited);
   }
+
+  pre {
+    background-color: #2E3440;
+    padding: 5px 15px;
+    border-radius: 5px;
+  
+  }
+  
+  code {
+    background-color: #2E3440;
+    padding: 0 10px;
+    color: #D8DEE9;
+    border-radius: 5px;
+  }
 }
 
 .center {
