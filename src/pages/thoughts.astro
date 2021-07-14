@@ -33,6 +33,13 @@ let title = 'JDen thoughts';
             }
         }
     }
+
+    .filters {
+        margin-bottom: 50px;
+        button {
+            margin-right: 10px;
+        }
+    }
 </style>
 <script>
     let selectedCategories = [];
@@ -84,7 +91,8 @@ let title = 'JDen thoughts';
             <p class="thoughtsText">Thoughts by <a href="/">Julien Dendauw</a>.
             <br>More of a journal than a blog.</p>
         </div>
-        <div>
+        <div class="filters">
+        <p>Filter the thoughts: </p>
             {
                 allKeywordsArray.map(keyword => {
                     return <button onclick="filterPosts(event)">{ keyword }</button>
