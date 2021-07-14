@@ -14,8 +14,13 @@
         }
 
         &__Logo {
+            display: none;
             width: 100px;
             height: 100px;
+
+            @media screen and (min-width: 1261px) {
+                display: block;
+            }
         }
 
         &__spotify {
