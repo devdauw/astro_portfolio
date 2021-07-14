@@ -3,6 +3,10 @@ import TopNavigation from '../components/TopNavigation.astro';
 import ThoughtCard from '../components/ThoughtCard.astro';
 
 let allBlogPosts = Astro.fetchContent('./thoughts/*.md');
+let allKeywords = allBlogPosts.map(content => content.categories);
+allKeywords = allKeywords.flat();
+allKeywords = new Set(allKeywords);
+let allKeywordsArray = Array.from(allKeywords);
 
 let title = 'JDen thoughts';
 ---
@@ -30,6 +34,40 @@ let title = 'JDen thoughts';
         }
     }
 </style>
+<script>
+    let selectedCategories = [];
+
+    const filterPosts = (event) => {
+        let allCategories = document.getElementsByTagName("BUTTON");
+        allCategories = Array.from(allCategories);
+        allCategories = allCategories.map(button => button.innerText);
+        if (!selectedCategories.includes(event.target.innerText)) {
+            selectedCategories.push(event.target.innerText.toLowerCase());
+        } else {
+            selectedCategories.pop(event.target.innerText.toLowerCase());
+        }
+
+        let thoughts = document.querySelectorAll('[data-type*="thought"]');
+        thoughts.forEach(thought => {
+            let cat = thought.children[2].children;
+            cat = Array.from(cat)
+            const status = cat.some((category) => {
+                return selectedCategories.includes(category.innerText.toLowerCase());
+            });
+            status
+            ? thought.style.display = ''
+            : thought.style.display = 'none'
+        });
+    }
+
+    const resetFilter = () => {
+        selectedCategories = [];
+        let thoughts = document.querySelectorAll('[data-type*="thought"]');
+        thoughts.forEach(thought => {
+            thought.style.display = ''
+        });
+    }
+</script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,6 +83,14 @@ let title = 'JDen thoughts';
             <img src="/assets/images/avatar.jpg" alt="" class="thoughtsImage">
             <p class="thoughtsText">Thoughts by <a href="/">Julien Dendauw</a>.
             <br>More of a journal than a blog.</p>
+        </div>
+        <div>
+            {
+                allKeywordsArray.map(keyword => {
+                    return <button onclick="filterPosts(event)">{ keyword }</button>
+                })
+            }
+            <button onclick="resetFilter()">Reset</button>
         </div>
         {
             allBlogPosts.map((post) => {

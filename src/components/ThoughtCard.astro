@@ -13,17 +13,26 @@ const { post } = Astro.props;
     }
 
     article {
-      margin-bottom: 50px;
+
         span {
           display: block;
           margin-bottom: 10px;
         }
     }
+
+    .categories {
+      margin-bottom: 50px;
+    }
+
+    .category {
+      margin-right: 10px;
+
+    }
 </style>
-<div>
+<div data-type="thought">
     <a href={post.url} class="post-title"><h3>{post.title}</h3></a>
     <article>
         <span>{post.abstract}</span>
-        <a href={post.url}>Read entry</a>
     </article>
+    <div class="categories">{ post.categories.map(category => <code class="category" data-category={category}>{category}</code>) }  </div>
 </div>
