@@ -7,7 +7,7 @@ let title = 'Julien Dendauw';
 <style lang="scss">
     .intro {
         grid-area: hero;
-        min-height: calc(100vh - 75px);
+        min-height: calc(100vh - 40px);
         background-color: var(--blue-extra-lite);
         background-image: url('/assets/images/coding.svg');
         background-repeat: no-repeat;
@@ -21,26 +21,37 @@ let title = 'Julien Dendauw';
         }
 
         .introContent {
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
             position: absolute;
             top: 65%;
-            font-family: Comfortaa, sans-serif;
             padding: 20px 15px;
+            width: 100%;
+            font-family: Comfortaa, sans-serif;
+
             h2 {
                 font-size: 2rem;
                 margin-bottom: 10px;
             }
+
+            p {
+                font-size: 1.6rem;
+      
+                .caret {
+                    display: none;
+                }
+            }
+
+
             @media screen and (min-width: 768px) {
                 top: 80%;
                 h2 {
-                    font-size: 3rem;
-                    margin-bottom: 10px;
+                    font-size: 3.5rem;
                 }
                 p {
                     font-size: 2rem;
+
+                    .caret {
+                        display: inline;
+                    }
                 }
             }
 
@@ -51,7 +62,7 @@ let title = 'Julien Dendauw';
                     font-size: 5rem;
                 }
                 p {
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                 }
             }
         }
@@ -85,7 +96,7 @@ let title = 'Julien Dendauw';
 <body>
     <TopNavigation />
         <div class="intro">
-            <div class="introContent">
+            <div class="introContent center">
                 <div class="introText">
                     <h2>Hello, I'm Julien</h2>
                     <p><span class="caret">>_</span>A swiss-army knife developer from Belgium</p>
