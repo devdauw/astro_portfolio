@@ -68,8 +68,13 @@ body {
   footer {
     grid-area: footer;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
   }
 
   p {

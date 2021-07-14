@@ -1,10 +1,73 @@
 <style lang="scss">
-    footer {
-        height: 100px;
-        border-top: solid 1px var(--black);
+    .mainFooter {
+        margin-top: 100px;
+        height: 200px;
         bottom: 0;
+
+        a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        a:first-of-type {
+            margin-left: 0;
+        }
+
+        &__Logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        &__spotify {
+            width: 300px; 
+            height: 80px;
+        }
+
+
+
+        .footerSocial {
+            &__email {
+                width: 25px;
+                height: 25px;
+                filter: invert(11%) sepia(87%) saturate(5413%) hue-rotate(201deg) brightness(83%) contrast(95%);
+            }
+
+            &__github {
+                width: 25px;
+                height: 25px;
+                filter: invert(11%) sepia(87%) saturate(5413%) hue-rotate(201deg) brightness(83%) contrast(95%);
+            }
+
+            &__linkedin {
+                width: 25px;
+                height: 25px;
+                filter: invert(11%) sepia(87%) saturate(5413%) hue-rotate(201deg) brightness(83%) contrast(95%);
+            }
+
+            &__twitter {
+                width: 25px;
+                height: 25px;
+                filter: invert(11%) sepia(87%) saturate(5413%) hue-rotate(201deg) brightness(83%) contrast(95%);
+            }
+        }
     }
 </style>
-<footer>
-    <iframe src="https://open.spotify.com/embed/playlist/6NGr4szum5uqIbD6q7WQNh" width="500" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<footer class="mainFooter">
+    <div class="footerSocial">
+        <p>Get in touch.</p>
+        <a href="mailto:julien@dendauw.tech?subject=🤘 - Mail from dendauw.tech">
+            <object data="/assets/images/icons/envelope.svg" type="image/svg+xml" class="footerSocial__email"></object>
+        </a>
+        <a href="https://github.com/Dauwbot" target="_blank" rel="noopener noreferrer">
+            <object data="/assets/images/icons/github.svg" type="image/svg+xml" class="footerSocial__github"></object>
+        </a>
+        <a href="https://www.linkedin.com/in/juliendendauw/" target="_blank" rel="noopener noreferrer" >
+            <object data="/assets/images/icons/linkedin.svg" type="image/svg+xml" class="footerSocial__linkedin"></object>
+        </a>
+        <a href="https://twitter.com/dauwlama" target="_blank" rel="noopener noreferrer">
+            <object data="/assets/images/icons/twitter.svg" type="image/svg+xml" class="footerSocial__twitter"></object>
+        </a>
+    </div>
+    <img src = "/assets/images/d_logo.svg" alt="" class="mainFooter__Logo"/>
+    <iframe src="https://open.spotify.com/embed/playlist/6NGr4szum5uqIbD6q7WQNh" frameborder="0" allowtransparency="true" allow="encrypted-media" class="mainFooter__spotify"></iframe>
 </footer>

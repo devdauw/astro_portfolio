@@ -1,6 +1,7 @@
 ---
 import TopNavigation from '../components/TopNavigation.astro';
 import ThoughtCard from '../components/ThoughtCard.astro';
+import Footer from '../components/Footer.astro';
 
 let allBlogPosts = Astro.fetchContent('./thoughts/*.md');
 let allKeywords = allBlogPosts.map(content => content.categories);
@@ -8,7 +9,7 @@ allKeywords = allKeywords.flat();
 allKeywords = new Set(allKeywords);
 let allKeywordsArray = Array.from(allKeywords);
 
-let title = 'JDen thoughts';
+let title = 'Julien\'s thoughts';
 ---
 <style lang="scss">
     .thoughtsIntro {
@@ -108,5 +109,6 @@ let title = 'JDen thoughts';
             }
         )}
     </main>
+    <Footer />
 </body>
 </html>
