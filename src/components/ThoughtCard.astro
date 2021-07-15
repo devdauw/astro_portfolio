@@ -1,5 +1,13 @@
 ---
 const { post } = Astro.props;
+function parse(str) {
+    str = str.toString();
+    if(!/^(\d){8}$/.test(str)) return "invalid date";
+    var y = str.substr(0,4),
+        m = str.substr(4,2) - 1,
+        d = str.substr(6,2);
+    return new Date(y,m,d).toLocaleDateString("en-GB");
+}
 ---
 <style lang="scss">
   .post-title {
@@ -13,10 +21,9 @@ const { post } = Astro.props;
     }
 
     article {
-
+      margin-bottom: 1rem;
         span {
           display: block;
-          margin-bottom: 10px;
         }
     }
 
@@ -28,11 +35,17 @@ const { post } = Astro.props;
       margin-right: 10px;
 
     }
+
+    .post__date {
+      font-size: 1.2rem;
+    }
 </style>
 <div data-type="thought">
     <a href={post.url} class="post-title"><h3>{post.title}</h3></a>
     <article>
         <span>{post.abstract}</span>
+        <span class="post__date">Published: {parse(post.date)}</span>
     </article>
+
     <div class="categories">{ post.categories.map(category => <code class="category" data-category={category}>{category}</code>) }  </div>
 </div>
