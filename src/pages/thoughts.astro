@@ -4,6 +4,7 @@ import ThoughtCard from '../components/ThoughtCard.astro';
 import Footer from '../components/Footer.astro';
 
 let allBlogPosts = Astro.fetchContent('./thoughts/*.md');
+allBlogPosts = allBlogPosts.sort((a, b) => { return b.date - a.date });
 let allKeywords = allBlogPosts.map(content => content.categories);
 allKeywords = allKeywords.flat();
 allKeywords = new Set(allKeywords);
