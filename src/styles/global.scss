@@ -33,6 +33,13 @@ html {
 
   .caret {
     margin-right: 20px;
+    animation: blinker 1.25s step-start infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
   }
 }
 
