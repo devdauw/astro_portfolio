@@ -7,8 +7,9 @@
     "build": "astro build"
   },
   "devDependencies": {
-    "astro": "^0.16.3",
-    "snowpack": "^3.8.2"
+    "astro": "^0.23.0",
+    "snowpack": "^3.8.2",
+    "sass": "^1.49.8"
   },
   "dependencies": {
     "@material-design-icons/font": "^0.2.4"
