@@ -7,8 +7,7 @@ let allBlogPosts = Astro.fetchContent('./thoughts/*.md');
 allBlogPosts = allBlogPosts.sort((a, b) => { return b.date - a.date });
 let allKeywords = allBlogPosts.map(content => content.categories);
 allKeywords = allKeywords.flat();
-allKeywords = new Set(allKeywords);
-let allKeywordsArray = Array.from(allKeywords);
+let allKeywordsArray = Array.from(new Set(allKeywords));
 
 let title = 'Julien\'s thoughts';
 ---
