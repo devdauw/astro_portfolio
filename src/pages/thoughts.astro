@@ -68,13 +68,13 @@ const title = "Julien's thoughts";
           <br />More of a journal than a blog.
         </p>
       </div>
-      <div class="filters">
+      <!-- <div class="filters">
         <p>Filter the thoughts:</p>
         {uniqueKeywords.map((keyword) => {
           return <button onclick="filterPosts(event)">{keyword}</button>;
         })}
         <button onclick="resetFilter()">Reset</button>
-      </div>
+      </div> -->
       {dateSortedBlogPosts.map((post) => {
         if (post.published) {
           return <ThoughtCard post={post} />;
