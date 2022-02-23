@@ -1,4 +1,4 @@
-<footer class="mainFooter">
+<footer class="mainFooter" id="skewedFooter">
   <div class="footerSocial">
     <p>Get in touch.</p>
     <a href="mailto:julien@dendauw.tech?subject=🤘 Mail from dendauw.tech">
@@ -42,7 +42,15 @@
 
 <style lang="scss">
   .mainFooter {
-    margin-top: 100px;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    background-image: linear-gradient(
+      to right top,
+      #074587,
+      #245a9c,
+      #3970b1,
+      #4e86c6,
+      #629ddb
+    );
     height: 200px;
     bottom: 0;
 
