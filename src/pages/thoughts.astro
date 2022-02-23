@@ -8,8 +8,9 @@ allBlogPosts = allBlogPosts.sort((a, b) => {
   return b.date - a.date;
 });
 let allKeywords = allBlogPosts.map((content) => content.categories);
+console.log(allKeywords);
 allKeywords = allKeywords.flat();
-let allKeywordsArray = Array.from(new Set(allKeywords));
+let uniqueKeywords = [...new Set(allKeywords)];
 
 let title = "Julien's thoughts";
 ---
@@ -52,7 +53,11 @@ let title = "Julien's thoughts";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="/style/global.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href={Astro.resolve("../styles/global.scss")}
+    />
   </head>
   <body>
     <TopNavigation />
@@ -66,7 +71,7 @@ let title = "Julien's thoughts";
       </div>
       <div class="filters">
         <p>Filter the thoughts:</p>
-        {allKeywordsArray.map((keyword) => {
+        {uniqueKeywords.map((keyword) => {
           return <button onclick="filterPosts(event)">{keyword}</button>;
         })}
         <button onclick="resetFilter()">Reset</button>
