@@ -3,16 +3,15 @@ import TopNavigation from "../components/TopNavigation.astro";
 import ThoughtCard from "../components/ThoughtCard.astro";
 import Footer from "../components/Footer.astro";
 
-let allBlogPosts = Astro.fetchContent("./thoughts/*.md");
-allBlogPosts = allBlogPosts.sort((a, b) => {
+const allBlogPosts = Astro.fetchContent("./thoughts/*.md");
+const dateSortedBlogPosts = allBlogPosts.sort((a, b) => {
   return b.date - a.date;
 });
 let allKeywords = allBlogPosts.map((content) => content.categories);
-console.log(allKeywords);
 allKeywords = allKeywords.flat();
-let uniqueKeywords = [...new Set(allKeywords)];
+const uniqueKeywords = [...new Set(allKeywords)];
 
-let title = "Julien's thoughts";
+const title = "Julien's thoughts";
 ---
 
 <script>
@@ -76,7 +75,7 @@ let title = "Julien's thoughts";
         })}
         <button onclick="resetFilter()">Reset</button>
       </div>
-      {allBlogPosts.map((post) => {
+      {dateSortedBlogPosts.map((post) => {
         if (post.published) {
           return <ThoughtCard post={post} />;
         }
