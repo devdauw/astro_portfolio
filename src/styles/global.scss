@@ -1,14 +1,20 @@
 $blue-accent: #074587;
 $blue-lite: #2077d3;
-$blue-extra-lite: #629DDB;
-$red: #D44035;
+$blue-extra-lite: #629ddb;
+$red: #d44035;
 $black: #111827;
 $white: #f9fafb;
 
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 @font-face {
-  font-family: 'Comfortaa';
-  src:  url('/assets/fonts/Comfortaa-Regular.woff') format('woff'),
-        url('/assets/fonts/Comfortaa-Regular.ttf') format('truetype');
+  font-family: "Comfortaa";
+  src: url("/assets/fonts/Comfortaa-Regular.woff") format("woff"),
+    url("/assets/fonts/Comfortaa-Regular.ttf") format("truetype");
 }
 
 * {
@@ -21,7 +27,8 @@ html {
 }
 
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
   --accent: #{$blue-accent};
   --link: #{$blue-lite};
   --link-visited: #{$red};
@@ -30,46 +37,56 @@ html {
   --blue-lite: #{$blue-lite};
   --blue-extra-lite: #{$blue-extra-lite};
   --red: #{$red};
+}
 
-  .caret {
-    margin-right: 20px;
-    animation: blinker 1.25s step-start infinite;
-  }
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  max-width: 65ch;
+}
 
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
 }
 
 body {
   font-size: 20px; /* px fallback */
   font-size: 2rem;
-  line-height: 1.5; /* a nice line-height */
+  line-height: 1.6; /* a nice line-height */
   display: grid;
   background: var(--white);
   color: var(--black);
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 50px auto auto 150px;
   grid-template-areas:
-      "header header header"
-      "hero hero hero"
-      "main main main"
-      "footer footer footer";
+    "header header header"
+    "hero hero hero"
+    "main main main"
+    "footer footer footer";
 
   @media screen and (min-width: 1260px) {
     grid-template-rows: 75px auto auto 150px;
     grid-template-areas:
-    "header header header"
-    "hero hero hero"
-    ". main ."
-    "footer footer footer";
+      "header header header"
+      "hero hero hero"
+      ". main ."
+      "footer footer footer";
   }
 
   main {
     grid-area: main;
-    margin: 3vh 2vw;
+    margin: 2em 2em;
   }
 
   footer {
@@ -84,10 +101,6 @@ body {
     }
   }
 
-  p {
-    margin-bottom: 20px;
-  }
-
   a {
     color: var(--link);
   }
@@ -97,16 +110,15 @@ body {
   }
 
   pre {
-    background-color: #2E3440;
+    background-color: #2e3440;
     padding: 5px 15px;
     border-radius: 5px;
-  
   }
-  
+
   code {
-    background-color: #2E3440;
+    background-color: #2e3440;
     padding: 0 10px;
-    color: #D8DEE9;
+    color: #d8dee9;
     border-radius: 5px;
   }
 }

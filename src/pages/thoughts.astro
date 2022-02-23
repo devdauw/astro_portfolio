@@ -1,114 +1,114 @@
 ---
-import TopNavigation from '../components/TopNavigation.astro';
-import ThoughtCard from '../components/ThoughtCard.astro';
-import Footer from '../components/Footer.astro';
+import TopNavigation from "../components/TopNavigation.astro";
+import ThoughtCard from "../components/ThoughtCard.astro";
+import Footer from "../components/Footer.astro";
 
-let allBlogPosts = Astro.fetchContent('./thoughts/*.md');
-allBlogPosts = allBlogPosts.sort((a, b) => { return b.date - a.date });
-let allKeywords = allBlogPosts.map(content => content.categories);
+let allBlogPosts = Astro.fetchContent("./thoughts/*.md");
+allBlogPosts = allBlogPosts.sort((a, b) => {
+  return b.date - a.date;
+});
+let allKeywords = allBlogPosts.map((content) => content.categories);
 allKeywords = allKeywords.flat();
 let allKeywordsArray = Array.from(new Set(allKeywords));
 
-let title = 'Julien\'s thoughts';
+let title = "Julien's thoughts";
 ---
-<style lang="scss">
-    .thoughtsIntro {
-        margin: 30px 0;
 
-        @media screen and (min-width: 1260px) {
-            justify-content: flex-start;
-            margin-bottom: 50px;
-        }
-
-        .thoughtsImage { 
-            border-radius: 50%;
-            height: 50px;
-            margin-right: 25px;
-        }
-
-        .thoughtsText {
-            margin: 0;
-            
-            a {
-                color: var(--accent);
-            }
-        }
-    }
-
-    .filters {
-        margin-bottom: 50px;
-        button {
-            margin-right: 10px;
-        }
-    }
-</style>
 <script>
-    let selectedCategories = [];
+  let selectedCategories = [];
 
-    const filterPosts = (event) => {
-        let allCategories = document.getElementsByTagName("BUTTON");
-        allCategories = Array.from(allCategories);
-        allCategories = allCategories.map(button => button.innerText);
-        if (!selectedCategories.includes(event.target.innerText)) {
-            selectedCategories.push(event.target.innerText.toLowerCase());
-        } else {
-            selectedCategories.pop(event.target.innerText.toLowerCase());
-        }
-
-        let thoughts = document.querySelectorAll('[data-type*="thought"]');
-        thoughts.forEach(thought => {
-            let cat = thought.children[2].children;
-            cat = Array.from(cat)
-            const status = cat.some((category) => {
-                return selectedCategories.includes(category.innerText.toLowerCase());
-            });
-            status
-            ? thought.style.display = ''
-            : thought.style.display = 'none'
-        });
+  const filterPosts = (event) => {
+    let allCategories = document.getElementsByTagName("BUTTON");
+    allCategories = Array.from(allCategories);
+    allCategories = allCategories.map((button) => button.innerText);
+    if (!selectedCategories.includes(event.target.innerText)) {
+      selectedCategories.push(event.target.innerText.toLowerCase());
+    } else {
+      selectedCategories.pop(event.target.innerText.toLowerCase());
     }
 
-    const resetFilter = () => {
-        selectedCategories = [];
-        let thoughts = document.querySelectorAll('[data-type*="thought"]');
-        thoughts.forEach(thought => {
-            thought.style.display = ''
-        });
-    }
+    let thoughts = document.querySelectorAll('[data-type*="thought"]');
+    thoughts.forEach((thought) => {
+      let cat = thought.children[2].children;
+      cat = Array.from(cat);
+      const status = cat.some((category) => {
+        return selectedCategories.includes(category.innerText.toLowerCase());
+      });
+      status ? (thought.style.display = "") : (thought.style.display = "none");
+    });
+  };
+
+  const resetFilter = () => {
+    selectedCategories = [];
+    let thoughts = document.querySelectorAll('[data-type*="thought"]');
+    thoughts.forEach((thought) => {
+      thought.style.display = "";
+    });
+  };
 </script>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="stylesheet" href="/style/global.css">
-</head>
-<body>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style/global.css" />
+  </head>
+  <body>
     <TopNavigation />
     <main>
-        <div class="thoughtsIntro center">
-            <img src="/assets/images/avatar.jpg" alt="" class="thoughtsImage">
-            <p class="thoughtsText">Thoughts by <a href="/">Julien Dendauw</a>.
-            <br>More of a journal than a blog.</p>
-        </div>
-        <div class="filters">
-        <p>Filter the thoughts: </p>
-            {
-                allKeywordsArray.map(keyword => {
-                    return <button onclick="filterPosts(event)">{ keyword }</button>
-                })
-            }
-            <button onclick="resetFilter()">Reset</button>
-        </div>
-        {
-            allBlogPosts.map((post) => {
-                if (post.published) {
-                    return <ThoughtCard post={post} />
-                }
-            }
-        )}
+      <div class="thoughtsIntro center">
+        <img src="/assets/images/avatar.jpg" alt="" class="thoughtsImage" />
+        <p class="thoughtsText">
+          Thoughts by <a href="/">Julien Dendauw</a>.
+          <br />More of a journal than a blog.
+        </p>
+      </div>
+      <div class="filters">
+        <p>Filter the thoughts:</p>
+        {allKeywordsArray.map((keyword) => {
+          return <button onclick="filterPosts(event)">{keyword}</button>;
+        })}
+        <button onclick="resetFilter()">Reset</button>
+      </div>
+      {allBlogPosts.map((post) => {
+        if (post.published) {
+          return <ThoughtCard post={post} />;
+        }
+      })}
     </main>
     <Footer />
-</body>
+  </body>
 </html>
+
+<style lang="scss">
+  .thoughtsIntro {
+    margin: 30px 0;
+
+    @media screen and (min-width: 1260px) {
+      justify-content: flex-start;
+      margin-bottom: 50px;
+    }
+
+    .thoughtsImage {
+      border-radius: 50%;
+      height: 50px;
+      margin-right: 25px;
+    }
+
+    .thoughtsText {
+      margin: 0;
+
+      a {
+        color: var(--accent);
+      }
+    }
+  }
+
+  .filters {
+    margin-bottom: 50px;
+    button {
+      margin-right: 10px;
+    }
+  }
+</style>

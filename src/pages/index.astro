@@ -1,124 +1,160 @@
 ---
-import TopNavigation from '../components/TopNavigation.astro';
-import Footer from '../components/Footer.astro';
+import TopNavigation from "../components/TopNavigation.astro";
+import Footer from "../components/Footer.astro";
 
-const title = 'Julien Dendauw';
+const title = "Julien Dendauw";
 ---
-<style lang="scss">
-    .intro {
-        grid-area: hero;
-        min-height: calc(100vh - 40px);
-        background-color: var(--blue-extra-lite);
-        background-image: url('/assets/images/coding.svg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: top;
-        color: var(--white);
 
-        @media screen and (min-width: 1260px) {
-            background-position: right;
-            background-attachment: fixed;
-        }
-
-        .introContent {
-            position: absolute;
-            top: 65%;
-            padding: 20px 15px;
-            width: 100%;
-            font-family: Comfortaa, sans-serif;
-
-            h2 {
-                font-size: 2rem;
-                margin-bottom: 10px;
-            }
-
-            p {
-                font-size: 1.6rem;
-      
-                .caret {
-                    display: none;
-                }
-            }
-
-            @media screen and (min-width: 768px) {
-                top: 80%;
-                h2 {
-                    font-size: 3.5rem;
-                }
-                p {
-                    font-size: 2rem;
-
-                    .caret {
-                        display: inline;
-                    }
-                }
-            }
-
-            @media screen and (min-width: 1260px) { 
-                top: 50%;
-                width: 50%;
-                h2 {
-                    font-size: 5rem;
-                }
-                p {
-                    font-size: 2.5rem;
-                }
-            }
-        }
-    }
-
-</style>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Julien Dendauw has a portfolio?! Even a blog?! Yes and I'm trying to make complex topics easier to gasp with byte-sized posts!">
-    <meta name="author" content="Julien Dendauw">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Julien Dendauw has a portfolio?! Even a blog?! Yes and I'm trying to make complex topics easier to gasp with byte-sized posts!"
+    />
+    <meta name="author" content="Julien Dendauw" />
     <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.scss')}>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href={Astro.resolve("../styles/global.scss")}
+    />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dendauw.tech/">
-    <meta property="og:title" content="Julien Dendauw">
-    <meta property="og:description" content="Julien Dendauw has a portfolio?! Even a blog?! Yes and I'm trying to make complex topics easier to gasp with byte-sized posts!">
-    <meta property="og:image" content="https://dendauw.tech/assets/images/site-metadata.png">
-</head>
-<body>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dendauw.tech/" />
+    <meta property="og:title" content="Julien Dendauw" />
+    <meta
+      property="og:description"
+      content="Julien Dendauw has a portfolio?! Even a blog?! Yes and I'm trying to make complex topics easier to gasp with byte-sized posts!"
+    />
+    <meta
+      property="og:image"
+      content="https://dendauw.tech/assets/images/site-metadata.png"
+    />
+  </head>
+  <body>
     <TopNavigation />
-        <div class="intro">
-            <div class="introContent center">
-                <div class="introText">
-                    <h2>Hello, I'm Julien</h2>
-                    <p><span class="caret">_</span>A swiss-army knife engineer from Belgium</p>
-                </div>
-            </div>
+    <div class="intro">
+      <div class="introContent center">
+        <div class="introText">
+          <h2>Hello, I'm Julien</h2>
+          <p>
+            <span class="caret">_</span>A swiss-army knife engineer from Belgium
+          </p>
         </div>
+      </div>
+    </div>
     <main>
-<section>
-            <h3>INTRODUCTION</h3>
-            <p>
-                Welcome to my website. It uses <a href="https://astro.build/">Astro</a> as a framework. It's mainly used to gather my <a href="/thoughts">thoughts</a> for now, hopefully I'll add some more work on this.
-                <br>You can <a href="https://github.com/Dauwbot/astro_portfolio/tree/develop">read the source-code of this website on Github</a>. If you would like to reach out, you can always <a href="mailto:julien@dendauw.tech?subject=🤘 Mail from dendauw.tech">send me an email</a>.
-            </p>
-            <h4>The Tech stack</h4>
-            <p>
-                The web is getting more intricate by the day and <a href="https://motherfuckingwebsite.com/">going back</a> to <a href="http://bettermotherfuckingwebsite.com/">simpler times</a> is something <a href="https://thebestmotherfucking.website/">we could all benefit</a> from, like in our everyday lives! 🌱
-
-            </p>
-            <p>
-                I'm trying to keep it as clean as possible. I'm not here to sell anything to you. I just want to discuss subjects that are interesting when you're a starting developer.
-                <br>I chose Astro because:
-            </p>
-            <ul>
-                <li>I wanted a static website for SEO. Who knows maybe this will be a hit!</li>
-                <li>I feel like side projects should be fun and not related to work: I've been using React & Angular at work for quite some time and I wanted to come back to an ecosystem where I can write big fat HTML files without worrying about the latest trend</li>
-                <li>I wanted to learn multiple frameworks and amazingly <a href="https://astro.build/">Astro</a> can run
-                    <a href="https://astro-docs-preview.vercel.app/core-concepts/component-hydration">components</a> from all the big guys out here!</li>
-            </ul>
-        </section>
+      <section>
+        <h3>whoami<span class="caret">_</span></h3>
+        <p>
+          Welcome to my website. It uses <a href="https://astro.build/">Astro</a
+          > as a framework. It's mainly used to gather my <a href="/thoughts"
+            >thoughts</a
+          > for now, hopefully I'll add some more work on this.
+          <br />You can <a
+            href="https://github.com/Dauwbot/astro_portfolio/tree/develop"
+            >read the source-code of this website on Github</a
+          >. If you would like to reach out, you can always <a
+            href="mailto:julien@dendauw.tech?subject=🤘 Mail from dendauw.tech"
+            >send me an email</a
+          >.
+        </p>
+        <h4>The Tech stack</h4>
+        <p>
+          The web is getting more intricate by the day and <a
+            href="https://motherfuckingwebsite.com/">going back</a
+          > to <a href="http://bettermotherfuckingwebsite.com/">simpler times</a
+          > is something <a href="https://thebestmotherfucking.website/"
+            >we could all benefit</a
+          > from, like in our everyday lives! 🌱
+        </p>
+        <p>
+          I'm trying to keep it as clean as possible. I'm not here to sell
+          anything to you. I just want to discuss subjects that are interesting
+          when you're a starting developer.
+          <br />I chose Astro because:
+        </p>
+        <ul>
+          <li>
+            I wanted a static website for SEO. Who knows maybe this will be a
+            hit!
+          </li>
+          <li>
+            I feel like side projects should be fun and not related to work:
+            I've been using React & Angular at work for quite some time and I
+            wanted to come back to an ecosystem where I can write big fat HTML
+            files without worrying about the latest trend
+          </li>
+          <li>
+            I wanted to learn multiple frameworks and amazingly <a
+              href="https://astro.build/">Astro</a
+            > can run <a
+              href="https://astro-docs-preview.vercel.app/core-concepts/component-hydration"
+              >components</a
+            > from all the big guys out here!
+          </li>
+        </ul>
+      </section>
     </main>
     <Footer />
-    </body>
+  </body>
 </html>
+
+<style lang="scss">
+  .intro {
+    grid-area: hero;
+    min-height: calc(100vh - 40px);
+    background-color: var(--blue-extra-lite);
+    background-image: url("/assets/images/coding.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    color: var(--white);
+
+    @media screen and (min-width: 800px) {
+      background-position: right;
+      background-attachment: fixed;
+    }
+
+    .introContent {
+      position: absolute;
+      padding: 1em;
+      top: 55%;
+      width: 100%;
+      font-family: Comfortaa, sans-serif;
+      .caret {
+        display: none;
+      }
+
+      @media screen and (min-width: 768px) {
+        top: 80%;
+        h2 {
+          font-size: 3.5rem;
+        }
+        p {
+          font-size: 2rem;
+        }
+      }
+
+      @media screen and (min-width: 1260px) {
+        top: 50%;
+        width: 50%;
+        h2 {
+          font-size: 5rem;
+        }
+        p {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  .caret {
+    display: inline;
+    animation: blinker 1.25s step-start infinite;
+  }
+</style>

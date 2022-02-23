@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "start": "astro dev",
-    "build": "astro build"
+    "build": "astro build",
+    "format": "yarn prettier -w ."
   },
   "devDependencies": {
     "astro": "^0.23.0",
-    "snowpack": "^3.8.2",
-    "sass": "^1.49.8"
+    "prettier": "2.5.1",
+    "prettier-plugin-astro": "^0.0.12",
+    "sass": "^1.49.8",
+    "snowpack": "^3.8.2"
   },
   "dependencies": {
     "@material-design-icons/font": "^0.2.4"

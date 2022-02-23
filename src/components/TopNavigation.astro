@@ -1,89 +1,94 @@
+<header>
+  <nav>
+    <div class="navLogoAndName">
+      <a href="/" class="linkBlock">
+        <img src="/assets/images/d_logo.svg" alt="" class="navLogo" />
+        <h1 class="nameSmallScreen">
+          <span class="navSurname">j</span><span class="navName">den</span>
+        </h1>
+        <h1 class="nameBigScreen">
+          <span class="navSurname">julien</span><span class="navName"
+            >dendauw</span>
+        </h1>
+      </a>
+    </div>
+    <div class="navLinks">
+      <a href="#contactForm">contact</a>
+      <a href="/thoughts">thoughts</a>
+    </div>
+  </nav>
+</header>
+
 <style lang="scss">
-    header {
-      grid-area: header;
-      box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
+  header {
+    grid-area: header;
+    box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
+  }
+
+  nav {
+    font-family: Comfortaa, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0 2em;
+
+    @media screen and (min-width: 1260px) {
+      justify-content: space-around;
+      padding: 0; /* We can remove the padding since items will be centered */
     }
 
-    nav {
-      font-family: Comfortaa, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 15px;
-      height: 100%;
+    .navLogoAndName {
+      .linkBlock {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
 
-      @media screen and (min-width: 1260px) {
-        justify-content: space-around;
-        padding: 0; /* We can remove the padding since items will be centered */
-      }
+        .navLogo {
+          display: none;
 
-      .navLogoAndName {
-        .linkBlock {
-          display: flex;
-          align-items: center;
-          text-decoration: none;
-
-          .navLogo {
-            display: none;
-  
-            @media screen and (min-width: 1260px) {
-              display: inline;
-              width: 50px;
-              height: 50px;
-              padding: 5px;
-              margin-right: 25px;
-              border-radius: 10px;
-              border: 2px solid var(--link);
-            }
+          @media screen and (min-width: 1260px) {
+            display: inline;
+            width: 50px;
+            height: 50px;
+            padding: 5px;
+            margin-right: 25px;
+            border-radius: 10px;
+            border: 2px solid var(--link);
           }
+        }
 
-          h1 {
-            font-size: 2.5rem;
+        .nameBigScreen {
+          display: none;
+        }
 
-            @media screen and (min-width: 1260px) {
-              font-size: 4rem;
-            }
+        @media screen and (min-width: 1260px) {
+          .nameSmallScreen {
+            display: none;
           }
 
           .nameBigScreen {
-            display: none;
-          }
-
-          @media screen and (min-width: 1260px) {
-            .nameSmallScreen {
-              display: none;
-            }
-            
-            .nameBigScreen {
-              display: inline;
-            }
-          }
-
-          .navSurname {
-            color: var(--blue-lite);
-          }
-          .navName {
-            color: var(--accent);
+            display: inline;
           }
         }
-      }
 
-      .navLinks a  {
-        color: var(--link);
+        .navSurname {
+          color: var(--blue-lite);
+        }
+        .navName {
+          color: var(--accent);
+        }
       }
     }
+
+    .navLinks {
+      a {
+        color: var(--link);
+      }
+
+      :not(:last-child) {
+        margin-right: 1em;
+      }
+    }
+  }
 </style>
-<header>
-    <nav>
-        <div class="navLogoAndName">
-            <a href="/" class="linkBlock">
-                <img src="/assets/images/d_logo.svg" alt="" class="navLogo" />
-                <h1 class="nameSmallScreen"><span class="navSurname">j</span><span class="navName">den</span></h1>
-                <h1 class="nameBigScreen"><span class="navSurname">julien</span><span class="navName">dendauw</span></h1>
-            </a>
-        </div>
-        <div class="navLinks">
-          <a href="/thoughts">thoughts</a>
-        </div>
-    </nav>
-</header>
