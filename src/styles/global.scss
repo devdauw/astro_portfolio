@@ -78,7 +78,17 @@ body {
     "main main main"
     "footer footer footer";
 
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "hero hero hero"
+      ". main ."
+      "footer footer footer";
+  }
+
   @media screen and (min-width: 1440px) {
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 75px auto auto 150px;
     grid-template-areas:
       "header header header"
