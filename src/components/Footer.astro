@@ -45,7 +45,7 @@
     position: relative;
     bottom: 0;
     align-items: center;
-    height: 30vh;
+    height: 20vh;
 
     &::before {
       content: "";
@@ -53,7 +53,7 @@
       height: 100%;
       position: absolute;
       top: 0;
-      z-index: -1;
+
       clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
       background-image: linear-gradient(
         to right top,
@@ -97,6 +97,7 @@
     &__spotify {
       width: 300px;
       height: 80px;
+      z-index: 1;
     }
 
     .footerSocial {
