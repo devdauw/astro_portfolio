@@ -83,17 +83,16 @@ body {
     "hero"
     "main"
     "footer";
-    &::after{
-      @media screen and (min-width: 1920px) {
-        content: '';
-        width: 60vw;
-        background-position: right;
-        background-image: url("/assets/images/laptop.svg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-      }
+  &::after {
+    @media screen and (min-width: 1920px) {
+      content: "";
+      width: 60vw;
+      background-position: right;
+      background-image: url("/assets/images/laptop.svg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
-
+  }
 
   @media screen and (min-width: 1260px) {
     grid-template-columns: 1fr 2fr 1fr;
@@ -124,7 +123,6 @@ body {
     @media screen and (min-width: 1920px) {
       margin: 4em 3em;
     }
-    
   }
 
   footer {
