@@ -70,7 +70,7 @@ body {
   display: grid;
   background: var(--white);
   color: var(--black);
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 50px auto auto 150px;
   grid-template-areas:
     "header header header"
