@@ -17,7 +17,9 @@ $white: #f9fafb;
     url("/assets/fonts/Comfortaa-Regular.ttf") format("truetype");
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
 }
