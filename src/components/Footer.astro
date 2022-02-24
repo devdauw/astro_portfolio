@@ -65,13 +65,21 @@
       );
     }
 
+    p {
+      color: var(--white);
+    }
+
     a {
       display: inline-block;
       margin: 0 10px;
-    }
 
-    a:first-of-type {
-      margin-left: 0;
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
 
     &__Logo {
@@ -90,32 +98,11 @@
     }
 
     .footerSocial {
-      &__email {
-        width: 25px;
-        height: 25px;
-        filter: invert(11%) sepia(87%) saturate(5413%) hue-rotate(201deg)
-          brightness(83%) contrast(95%);
-      }
-
-      &__github {
-        width: 25px;
-        height: 25px;
-        filter: invert(11%) sepia(87%) saturate(5413%) hue-rotate(201deg)
-          brightness(83%) contrast(95%);
-      }
-
-      &__linkedin {
-        width: 25px;
-        height: 25px;
-        filter: invert(11%) sepia(87%) saturate(5413%) hue-rotate(201deg)
-          brightness(83%) contrast(95%);
-      }
-
-      &__twitter {
-        width: 25px;
-        height: 25px;
-        filter: invert(11%) sepia(87%) saturate(5413%) hue-rotate(201deg)
-          brightness(83%) contrast(95%);
+      img {
+        width: 30px;
+        height: 30px;
+        filter: invert(100%) sepia(5%) saturate(1480%) hue-rotate(175deg)
+          brightness(100%) contrast(97%);
       }
     }
   }
