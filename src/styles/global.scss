@@ -61,7 +61,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 6rem;
   font-family: comfortaaregular, sans-serif;
 }
 
@@ -78,7 +78,7 @@ body {
   background: var(--white);
   color: var(--black);
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 50px auto auto 150px;
+  grid-template-rows: 7.5vh auto auto auto;
   grid-template-areas:
     "header header header"
     "hero hero hero"
@@ -96,7 +96,7 @@ body {
 
   @media screen and (min-width: 1440px) {
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 75px auto auto 150px;
+
     grid-template-areas:
       "header header header"
       "hero hero hero"
@@ -106,7 +106,11 @@ body {
 
   main {
     grid-area: main;
-    margin: 5em 2em;
+    margin: 2em 2em;
+
+    @media screen and (min-width: 1260px) {
+      margin: 4em 2em;
+    }
   }
 
   footer {
@@ -127,19 +131,6 @@ body {
 
   a:visited {
     color: var(--link-visited);
-  }
-
-  pre {
-    background-color: #2e3440;
-    padding: 5px 15px;
-    border-radius: 5px;
-  }
-
-  code {
-    background-color: #2e3440;
-    padding: 0 10px;
-    color: #d8dee9;
-    border-radius: 5px;
   }
 }
 
