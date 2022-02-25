@@ -46,7 +46,7 @@ const title = "Julien Dendauw";
       </div>
     </div>
     <main>
-      <section>
+      <section id="homePageContent">
         <h2>whoami<span class="caret">_</span></h2>
         <p>
           Welcome to my website. It uses <a href="https://astro.build/">Astro</a
@@ -117,12 +117,12 @@ const title = "Julien Dendauw";
     background-position: top center;
     background-attachment: fixed;
     color: var(--white);
-    font-family: 'Comfortaa', sans-serif;
+    font-family: "Comfortaa", sans-serif;
 
     @media screen and (max-height: 400px) {
-        h2 {
-          font-size: 2.3rem;
-        }
+      h2 {
+        font-size: 2.3rem;
+      }
     }
 
     @media screen and (min-width: 1920px) {
@@ -152,6 +152,18 @@ const title = "Julien Dendauw";
         top: 50%;
         width: 50%;
       }
+    }
+  }
+
+  @media screen and (min-width: 2560px) {
+    main {
+      display: grid;
+      grid-template-columns: auto 60ch auto;
+      grid-template-areas: ". content .";
+    }
+
+    #homePageContent {
+      grid-area: content;
     }
   }
 

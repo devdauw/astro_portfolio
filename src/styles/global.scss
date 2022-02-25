@@ -22,7 +22,6 @@ $white: #f9fafb;
   }
 }
 
-
 *,
 *::before,
 *::after {
@@ -79,6 +78,7 @@ body {
   display: grid;
   background: var(--white);
   color: var(--black);
+  grid-template-rows: 7.5vh auto auto auto;
   grid-template-areas:
     "header"
     "hero"
@@ -88,7 +88,6 @@ body {
   &::after {
     @media screen and (min-width: 1920px) {
       content: "";
-      width: 60vw;
       background-position: right;
       background-image: url("/assets/images/laptop.svg");
       background-repeat: no-repeat;
@@ -106,7 +105,16 @@ body {
   }
 
   @media screen and (min-width: 1920px) {
-    grid-template-columns: auto;
+    grid-template-columns: 3fr 4fr;
+    grid-template-areas:
+      "header header"
+      "hero hero"
+      "main ."
+      "footer footer";
+  }
+
+  @media screen and (min-width: 2560px) {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "header header"
       "hero hero"
@@ -123,7 +131,7 @@ body {
     }
 
     @media screen and (min-width: 1920px) {
-      margin: 4em 3em;
+      margin: 4em 0 4em 5em;
     }
   }
 
