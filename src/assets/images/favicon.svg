@@ -2,9 +2,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(1,0,0,1.00584,-21.1952,15.1065)">
-        <text x="23.627px" y="25.93px" style="font-family:'Comfortaa-SemiBold', 'Comfortaa';font-weight:600;font-size:41.425px;fill:rgb(7,69,135);">d</text>
-    </g>
-    <g transform="matrix(1,0,0,1,4.46903,-4.41303)">
-        <path d="M30.323,40.738L30.323,38.28L39.76,35.342C39.955,35.273 40.142,35.224 40.323,35.196C40.503,35.169 40.67,35.148 40.823,35.134C41.003,35.106 41.177,35.092 41.343,35.092L41.343,34.905C41.08,34.905 40.812,34.887 40.541,34.853C40.271,34.818 40.01,34.766 39.76,34.696L30.323,31.696L30.323,29.28L43.031,33.676L43.031,36.342L30.323,40.738ZM30.323,43.155L43.031,38.759L43.031,41.071L30.323,45.488L30.323,43.155Z" style="fill:rgb(7,69,135);"/>
+        <text x="25px" y="25px" style="font-family:'Comfortaa';font-size:50px;fill:rgb(255,255,255);">d</text>
     </g>
 </svg>
