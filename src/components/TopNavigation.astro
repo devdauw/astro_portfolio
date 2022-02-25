@@ -16,6 +16,7 @@
     <div class="navLinks">
       <!-- <a href="#contactForm">contact</a> -->
       <a href="/thoughts">thoughts</a>
+      <a href="/#contact" class="linkAsButton">Let's talk!</a>
     </div>
   </nav>
 </header>
@@ -32,7 +33,8 @@
     height: 100%;
     margin: 0 2em;
 
-    .nameSmallScreen, .nameBigScreen {
+    .nameSmallScreen,
+    .nameBigScreen {
       margin: 0;
     }
 
@@ -91,6 +93,10 @@
 
       :not(:last-child) {
         margin-right: 1em;
+      }
+
+      .linkAsButton {
+        background-color: red;
       }
     }
   }

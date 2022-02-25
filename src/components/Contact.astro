@@ -1,0 +1,47 @@
+<h2>Contact form</h2>
+<form name="contact" method="POST" data-netlify="true" id="contact">
+  <p>
+    <label>Name</label>
+    <input type="text" name="name" class="formField" />
+  </p>
+  <p>
+    <label>Email</label><input
+      type="email"
+      name="email"
+      class="formField"
+    />
+  </p>
+  <p>
+    <label>Message</label>
+    <textarea name="message" class="formField-textArea"></textarea>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+
+<style lang="scss">
+  form {
+    width: 100%;
+
+    p{
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    p > label {
+        display: inline-block;
+        min-width: 15rem;
+    }
+
+    .formField {
+        height: 4rem;
+        width: 40rem;
+
+        &-textArea {
+            min-height: 20rem;
+        }
+    }
+  }
+</style>
