@@ -6,6 +6,7 @@
         src="/assets/images/icons/envelope.min.svg"
         type="image/svg+xml"
         class="footerSocial__email"
+        alt="email"
       />
     </a>
     <a
@@ -17,6 +18,7 @@
         src="/assets/images/icons/github.min.svg"
         type="image/svg+xml"
         class="footerSocial__github"
+        alt="github"
       />
     </a>
     <a
@@ -28,6 +30,7 @@
         src="/assets/images/icons/linkedin.min.svg"
         type="image/svg+xml"
         class="footerSocial__linkedin"
+        alt="linkedin"
       />
     </a>
   </div>
@@ -37,18 +40,15 @@
     frameborder="0"
     allowtransparency="true"
     allow="encrypted-media"
-    class="mainFooter__spotify"></iframe>
+    class="mainFooter__spotify"
+    title="spotify-player"></iframe>
 </footer>
 
 <style lang="scss">
   .mainFooter {
     position: relative;
-    bottom: 0;
-    align-items: center;
     height: fit-content;
     min-height: 25vh;
-    @media screen {
-    }
 
     &::before {
       content: "";
@@ -68,13 +68,9 @@
       );
     }
 
-    p {
-      color: var(--white);
-    }
-
     a {
       display: inline-block;
-      margin: 0 10px;
+      margin: 0 1rem;
 
       &:first-of-type {
         margin-left: 0;
@@ -87,8 +83,8 @@
 
     &__Logo {
       display: none;
-      width: 100px;
-      height: 100px;
+      width: 10rem;
+      height: 10rem;
 
       @media screen and (min-width: 1024px) {
         display: block;
@@ -98,15 +94,15 @@
     }
 
     &__spotify {
-      width: 300px;
-      height: 80px;
+      width: 30rem;
+      height: 8rem;
       z-index: 1;
     }
 
     .footerSocial {
       img {
-        width: 30px;
-        height: 30px;
+        width: 3rem;
+        height: 3rem;
         filter: invert(100%) sepia(5%) saturate(1480%) hue-rotate(175deg)
           brightness(100%) contrast(97%);
       }
