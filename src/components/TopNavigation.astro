@@ -142,10 +142,11 @@
         position: relative;
         display: inline-block;
         color: var(--white);
-        background-color: var(--blue-extra-lite);
+        background-color: var(--blue-lite);
         padding: 1.25rem 5rem;
-        border-radius: 5rem;
+        border-radius: 1rem;
         transition: background-color 0.3s;
+        border: solid 1px transparent;
 
         &::before {
           position: absolute;
@@ -154,12 +155,13 @@
 
           left: 75%;
           opacity: 0;
-          transition: opacity 0.3s, transform 0.3s;
+          transition: all 0.3s, transform 0.3s;
         }
 
         &:hover {
-          background-color: var(--blue-lite);
-          color: var(--white);
+          background-color: var(--white);
+          color: var(--blue-lite);
+          border: solid 1px var(--blue-lite);
 
           &::before {
             -webkit-transform: translateX(.5rem);
