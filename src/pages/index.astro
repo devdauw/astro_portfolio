@@ -46,12 +46,11 @@ const age = currentYear - 1988;
         <div class="heroText">
           <span class="hero-title">Hello, I'm Julien.</span>
           <div id="heroRandomText">
-                    <h2 class="hero-phrase" id="heroPhrase">
-            I create websites using modern technologies.
-          </h2>
-          <a href="#" onclick="changeRandomPhrase()">&#8635;</a>
+            <h2 class="hero-phrase" id="heroPhrase">
+              I create websites using modern technologies.
+            </h2>
+            <a href="#" onclick="changeRandomPhrase()">&#8635;</a>
           </div>
-
         </div>
       </div>
     </div>
@@ -145,7 +144,13 @@ const age = currentYear - 1988;
       padding: 0 1em;
 
       #heroRandomText {
-        a {
+        display: none;
+      }
+
+      @media screen and (min-width: 1260px) {
+        #heroRandomText {
+          display: block;
+          a {
             font-size: 3rem;
             color: var(--white);
             text-decoration: none;
@@ -155,8 +160,8 @@ const age = currentYear - 1988;
               color: var(--red);
             }
           }
+        }
       }
-
       @media screen and (min-width: 1920px) {
         top: 50%;
         width: 50%;
