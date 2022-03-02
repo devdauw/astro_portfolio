@@ -38,11 +38,11 @@ const title = "Julien Dendauw";
   </head>
   <body>
     <TopNavigation />
-    <div class="intro">
-      <div class="introContent center">
-        <div class="introText">
+    <div class="hero">
+      <div class="heroContent center">
+        <div class="heroText">
           <span class="hero-title">Hello, I'm Julien.</span>
-          <h2>
+          <h2 class="hero-phrase">
             Creating great user experiences using modern frontend technologies.
           </h2>
         </div>
@@ -110,9 +110,8 @@ const title = "Julien Dendauw";
 </html>
 
 <style lang="scss">
-  .intro {
+  .hero {
     grid-area: hero;
-    height: fit-content;
     min-height: 92.5vh;
     background-color: var(--blue-extra-lite);
     background-image: url("/assets/images/coding.min.svg"); /* Fallback */
@@ -124,32 +123,23 @@ const title = "Julien Dendauw";
     color: var(--white);
     font-family: "Comfortaa", sans-serif;
 
-    @media screen and (max-height: 400px) {
-      h2 {
-        font-size: 2.3rem;
-      }
-    }
-
     @media screen and (min-width: 1920px) {
       background-position: right;
     }
 
-    .introContent {
+    .heroContent {
       position: absolute;
-      top: 70%;
+      top: 75%;
       width: 100%;
       padding: 0 1em;
 
-      @media screen and (max-width: 540px) {
-        h2 {
-          font-size: 3rem;
-        }
+      .hero-phrase {
+        display: none;
       }
 
-      @media screen and (min-width: 540px) {
-        p {
-          font-size: 2.5rem;
-          margin: 0;
+      @media screen and (min-width: 1260px) {
+        .hero-phrase {
+          display: block;
         }
       }
 

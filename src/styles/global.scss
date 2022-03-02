@@ -57,8 +57,12 @@ li {
   margin: 1em 0 0 0;
 }
 .hero-title {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 500;
+
+  @media screen and (min-width: 1260px) {
+    font-size: 6rem;
+  }
 }
 
 h1,
@@ -97,7 +101,7 @@ body {
   color: var(--black);
 
   display: grid;
-
+  grid-template-rows: 7.5vh auto auto auto;
   grid-template-areas:
     "header"
     "hero"
@@ -115,7 +119,6 @@ body {
   }
 
   @media screen and (min-width: 1260px) {
-    grid-template-rows: 7.5vh auto auto auto;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas:
       "header header header"
