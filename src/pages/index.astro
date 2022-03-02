@@ -4,6 +4,9 @@ import Footer from "../components/Footer.astro";
 import Contact from "../components/Contact.astro";
 
 const title = "Julien Dendauw";
+
+let currentYear = new Date().getFullYear();
+const age = currentYear - 1988;
 ---
 
 <html lang="en">
@@ -42,21 +45,33 @@ const title = "Julien Dendauw";
       <div class="heroContent center">
         <div class="heroText">
           <span class="hero-title">Hello, I'm Julien.</span>
-          <h2 class="hero-phrase">
-            Creating great user experiences using modern frontend technologies.
+          <form action="" id="randomPhraseForm"></form>
+          <h2 class="hero-phrase" id="heroPhrase">
+            I create websites using modern frontend technologies.
           </h2>
+          <a href="#" onclick="changeRandomPhrase()">Click me</a>
         </div>
       </div>
     </div>
     <main>
-      <section id="homePageContent">
-        <h2 id="about">whoami<span class="caret">_</span></h2>
+      <section id="aboutContent">
+        <h2 id="aboutTitle">whoami<span class="caret">_</span></h2>
         <p>
-          Welcome to my website. It uses <a href="https://astro.build/">Astro</a
-          > as a framework. It's mainly used to gather my <a href="/thoughts"
-            >thoughts</a
-          > for now, hopefully I'll add some more work on this.
-          <br />
+          I'm a {age} years old Belgian software engineer. I first dabbled with website
+          creation using Dreamweaver back in the 2000s.
+        </p>
+        <p>
+          After a detour in the communication field, I circled back to
+          development and have been honing my skills on (mainly) front-end
+          technologies since obtaining my bachelor in 2019.
+        </p>
+        <p>
+          I try my best to make websites use modern CSS and frameworks, while
+          remaining
+          <a href="https://youtu.be/Sp5_d6coiqU">blazingly fast</a>
+          .
+        </p>
+        <p>
           You can
           <a href="https://github.com/Dauwbot/astro_portfolio/tree/develop">
             read the source-code of this website on Github</a
@@ -64,48 +79,41 @@ const title = "Julien Dendauw";
           . If you would like to reach out, you can always
           <a href="mailto:julien@dendauw.tech?subject=🤘 Mail from dendauw.tech"
             >send me an email</a
-          >.
+          >
+          .
         </p>
-        <h3>The Tech stack</h3>
-        <p>
-          The web is getting more intricate by the day and
-          <a href="https://motherfuckingwebsite.com/">going back</a>
-          to <a href="http://bettermotherfuckingwebsite.com/">simpler times</a> is
-          something <a href="https://thebestmotherfucking.website/"
-            >we could all benefit</a
-          > from, like in our everyday lives! 🌱
-        </p>
-        <p>
-          I'm trying to keep it as clean as possible. I'm not here to sell
-          anything to you. I just want to discuss subjects that are interesting
-          when you're a starting developer.
-          <br />I chose Astro because:
-        </p>
-        <ul>
-          <li>
-            I wanted a static website for SEO. Who knows maybe this will be a
-            hit!
-          </li>
-          <li>
-            I feel like side projects should be fun and not related to work:
-            I've been using React & Angular at work for quite some time and I
-            wanted to come back to an ecosystem where I can write big fat HTML
-            files without worrying about the latest trend
-          </li>
-          <li>
-            I wanted to learn multiple frameworks and amazingly <a
-              href="https://astro.build/">Astro</a
-            > can run <a
-              href="https://astro-docs-preview.vercel.app/core-concepts/component-hydration"
-              >components</a
-            > from all the big guys out here!
-          </li>
-        </ul>
       </section>
+      <section id="technologies"></section>
       <Contact />
     </main>
 
     <Footer />
+
+    <script defer>
+      const originalRandomPhrases = [
+        "I create websites using modern frontend technologies.",
+        "I love hiking in the Ardennes.",
+        "I think CSS is underrated.",
+        "Stand-up paddleboarding is cool.",
+        "I learn by tackling new things.",
+      ];
+      let randomPhrases = originalRandomPhrases;
+
+      const changeRandomPhrase = () => {
+        const previousRandomPhrase =
+          document.getElementById("heroPhrase").innerText;
+        randomPhrases.length > 1
+          ? (randomPhrases = randomPhrases.filter(
+              (randomPhrase) => randomPhrase !== previousRandomPhrase
+            ))
+          : (randomPhrases = originalRandomPhrases.filter(
+              (randomPhrase) => randomPhrase !== previousRandomPhrase
+            ));
+        const randomPhrase =
+          randomPhrases[Math.floor(Math.random() * randomPhrases.length)];
+        document.getElementById("heroPhrase").innerText = randomPhrase;
+      };
+    </script>
   </body>
 </html>
 
@@ -128,6 +136,7 @@ const title = "Julien Dendauw";
     }
 
     .heroContent {
+      text-align: center;
       position: absolute;
       top: 75%;
       width: 100%;
