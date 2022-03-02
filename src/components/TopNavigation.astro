@@ -96,6 +96,9 @@
     }
 
     .navLinks {
+      @media screen and (min-width: 1260px) {
+        display: block;
+      }
       a {
         position: relative;
         font-size: 2rem;
@@ -143,7 +146,10 @@
         display: inline-block;
         color: var(--white);
         background-color: var(--blue-lite);
-        padding: 1.25rem 5rem;
+        padding: .5rem 3.5rem;
+        @media screen and (min-width: 1260px) {
+          padding: 1.25rem 5rem;
+        }
         border-radius: 1rem;
         transition: background-color 0.3s;
         border: solid 1px transparent;
@@ -164,9 +170,9 @@
           border: solid 1px var(--blue-lite);
 
           &::before {
-            -webkit-transform: translateX(.5rem);
-            -moz-transform: translateX(.5rem);
-            transform: translateX(.5rem);
+            -webkit-transform: translateX(0.5rem);
+            -moz-transform: translateX(0.5rem);
+            transform: translateX(0.5rem);
             opacity: 1;
           }
         }
