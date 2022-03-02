@@ -45,11 +45,13 @@ const age = currentYear - 1988;
       <div class="heroContent center">
         <div class="heroText">
           <span class="hero-title">Hello, I'm Julien.</span>
-          <form action="" id="randomPhraseForm"></form>
-          <h2 class="hero-phrase" id="heroPhrase">
+          <div id="heroRandomText">
+                    <h2 class="hero-phrase" id="heroPhrase">
             I create websites using modern technologies.
           </h2>
-          <a href="#" onclick="changeRandomPhrase()">Click me</a>
+          <a href="#" onclick="changeRandomPhrase()">&#8635;</a>
+          </div>
+
         </div>
       </div>
     </div>
@@ -142,14 +144,17 @@ const age = currentYear - 1988;
       width: 100%;
       padding: 0 1em;
 
-      .hero-phrase {
-        display: none;
-      }
+      #heroRandomText {
+        a {
+            font-size: 3rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
 
-      @media screen and (min-width: 1260px) {
-        .hero-phrase {
-          display: block;
-        }
+            &:hover {
+              color: var(--red);
+            }
+          }
       }
 
       @media screen and (min-width: 1920px) {
