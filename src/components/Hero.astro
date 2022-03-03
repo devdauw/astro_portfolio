@@ -1,0 +1,63 @@
+<section class="b-hero">
+  <div class="b-hero-content">
+    <span class="b-hero-content__title">Hello, I'm Julien.</span>
+    <div class="b-hero-content__random-text">
+      <h2 id="heroPhrase">I create websites using modern technologies.</h2>
+      <a
+        href="#"
+        onclick="changeRandomPhrase()"
+        class="b-hero-content__refresher">&#8635;</a
+      >
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .b-hero {
+    grid-area: hero;
+    min-height: 92.5vh;
+    background-color: var(--blue-extra-lite);
+    background-image: url("/assets/images/coding.min.svg"); /* Fallback */
+    background-image: url("/assets/images/coding.min.svg"),
+      linear-gradient(to right top, #074587, #245a9c, #3970b1, #4e86c6, #629ddb);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    color: var(--white);
+    font-family: "Comfortaa", sans-serif;
+
+    @media screen and (min-width: 1920px) {
+      background-position: right;
+    }
+
+    .b-hero-content {
+      text-align: center;
+      position: absolute;
+      top: 75%;
+      width: 100%;
+      padding: 0 1em;
+
+      &__random-text {
+        display: none;
+      }
+
+      &__refresher {
+        font-size: 3rem;
+        color: var(--white);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      @media screen and (min-width: 1260px) {
+        &__random-text {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 1920px) {
+        top: 50%;
+        width: 50%;
+      }
+    }
+  }
+</style>
