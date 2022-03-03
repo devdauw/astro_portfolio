@@ -1,15 +1,15 @@
 <h2>Contact form</h2>
-<form name="contact" method="POST" data-netlify="true" id="contact">
+<form name="contact_dendauw.tech" id="contact" method="POST" data-netlify="true">
   <p>
-    <label>Name</label>
-    <input type="text" name="name" class="formField" />
+    <label for="name">Name</label>
+    <input type="text" name="name" class="b-form__text-field" />
   </p>
   <p>
-    <label>Email</label><input type="email" name="email" class="formField" />
+    <label for="email">Email</label><input type="email" name="email" class="b-form__text-field" />
   </p>
   <p>
-    <label>Message</label>
-    <textarea name="message" class="formField-textArea"></textarea>
+    <label for="message">Message</label>
+    <textarea name="message" class="b-form__text-area"></textarea>
   </p>
   <button type="submit">Send</button>
 </form>
@@ -28,13 +28,17 @@
       min-width: 15rem;
     }
 
-    .formField {
-      height: 4rem;
-      max-width: 40rem;
+    .b-form {
+      &__text-field {
+        height: 3rem;
+        min-width: 20rem;
+        max-width: 100vw;
+      }
 
-      &-textArea {
+      &__text-area {
         min-height: 10rem;
-        max-width: 40rem;
+        min-width: 20rem;
+        max-width: 100vw;
       }
     }
   }
