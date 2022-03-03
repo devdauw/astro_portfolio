@@ -1,5 +1,5 @@
 ---
-import TopNavigation from "../components/TopNavigation.astro";
+import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
 import Contact from "../components/Contact.astro";
@@ -41,51 +41,47 @@ const age = currentYear - 1988;
     />
   </head>
   <body>
-    <TopNavigation />
+    <Header />
     <Hero />
-    <main>
-      <section class="b-about" id="about">
-        <h2 id="aboutTitle">whoami<span class="caret">_</span></h2>
-        <p>
-          I'm a {age} years old Belgian software engineer. I first dabbled with website
-          creation using Dreamweaver back in the 2000s.
-        </p>
-        <p>
-          After a detour in the communication field, I circled back to
-          development and have been honing my skills on (mainly) front-end
-          technologies since obtaining my bachelor in 2019.
-        </p>
-        <p>
-          I try my best to make websites use modern CSS and frameworks, while
-          remaining
-          <a href="https://youtu.be/Sp5_d6coiqU">blazingly fast</a>
-          .
-        </p>
-        <p>
-          You can
-          <a href="https://github.com/Dauwbot/astro_portfolio/tree/develop">
-            read the source-code of this website on Github</a
-          >
-          . If you would like to reach out, you can always
-          <a href="mailto:julien@dendauw.tech?subject=🤘 Mail from dendauw.tech"
-            >send me an email</a
-          >
-          .
-        </p>
-      </section>
-      <section class="b-computer"></section>
-      <section class="b-technologies" id="technologies"></section>
-      <Contact />
-    </main>
-
+    <section class="b-about">
+      <h2 id="aboutTitle">whoami<span class="caret">_</span></h2>
+      <p>
+        I'm a {age} years old Belgian software engineer. I first dabbled with website
+        creation using Dreamweaver back in the 2000s.
+      </p>
+      <p>
+        After a detour in the communication field, I circled back to development
+        and have been honing my skills on (mainly) front-end technologies since
+        obtaining my bachelor in 2019.
+      </p>
+      <p>
+        I try my best to make websites use modern CSS and frameworks, while
+        remaining
+        <a href="https://youtu.be/Sp5_d6coiqU">blazingly fast</a>
+        .
+      </p>
+      <p>
+        You can
+        <a href="https://github.com/Dauwbot/astro_portfolio/tree/develop">
+          read the source-code of this website on Github</a
+        >
+        . If you would like to reach out, you can always
+        <a href="mailto:julien@dendauw.tech?subject=🤘 Mail from dendauw.tech"
+          >send me an email</a
+        > or use <a href="/#contact">the form</a>.
+      </p>
+    </section>
+    <section class="b-technologies" id="technologies"></section>
+    <section class="b-projects" id="projects"></section>
+    <Contact />
     <Footer />
 
     <script defer>
       const originalRandomPhrases = [
         "I create websites using modern technologies.",
         "I love hiking in the Ardennes.",
-        "I think CSS is underrated.",
-        "Stand-up paddleboarding is cool.",
+        "I enjoy working with CSS.",
+        "Stand-up paddleboarding is pretty cool.",
         "I learn by tackling new things.",
       ];
       let randomPhrases = originalRandomPhrases;
@@ -113,26 +109,12 @@ const age = currentYear - 1988;
     grid-area: about;
   }
 
-  .computer {
-    grid-area: computer;
-    @media screen and (min-width: 1920px) {
-      background-position: right;
-      background-image: url("/assets/images/laptop.min.svg");
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+  .b-technologies {
+    grid-area: technologies;
   }
 
-  @media screen and (min-width: 2560px) {
-    main {
-      display: grid;
-      grid-template-columns: auto 60ch auto;
-      grid-template-areas: ". content .";
-    }
-
-    #homePageContent {
-      grid-area: content;
-    }
+  .b-project {
+    grid-area: projects;
   }
 
   .caret {

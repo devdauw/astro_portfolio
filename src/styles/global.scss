@@ -67,15 +67,7 @@ h6,
 p,
 li {
   max-width: 60ch;
-  margin: 1em 0 0 0;
-}
-.hero-title {
-  font-size: 4rem;
-  font-weight: 500;
-
-  @media screen and (min-width: 1260px) {
-    font-size: 6rem;
-  }
+  margin: 1rem 0 0 0;
 }
 
 h1,
@@ -114,15 +106,18 @@ body {
   color: var(--black);
 
   display: grid;
-  grid-template-rows: fit-content auto auto auto;
+  gap: 5rem 2rem;
   grid-template-areas:
     "header"
     "hero"
     "about"
+    "technologies"
+    "projects"
+    "contact"
     "footer";
 
   @media screen and (min-width: 1260px) {
-    grid-template-rows: 7.5vh auto auto auto;
+    grid-template-rows: 7.5vh auto;
   }
 
   @media screen and (min-width: 1260px) {
@@ -131,37 +126,15 @@ body {
       "header header header"
       "hero hero hero"
       ". about ."
+      ". technologies ."
+      ". projects ."
+      ". contact ."
       "footer footer footer";
   }
 
-  @media screen and (min-width: 1920px) {
-    grid-template-columns: 3fr 4fr;
-    grid-template-areas:
-      "header header header"
-      "hero hero hero"
-      "about computer computer"
-      "footer footer footer";
-  }
-
-  @media screen and (min-width: 2560px) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "header header header"
-      "hero hero hero"
-      "about computer computer"
-      "footer footer footer";
-  }
-
-  footer {
-    grid-area: footer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-
-    @media screen and (min-width: 1024px) {
-      flex-direction: row;
-    }
+  section {
+    margin: 0 auto;
+    padding: 0 2rem;
   }
 
   a {
