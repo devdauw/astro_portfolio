@@ -11,9 +11,7 @@
     <label>Message</label>
     <textarea name="message" class="formField-textArea"></textarea>
   </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
+  <button type="submit">Send</button>
 </form>
 
 <style lang="scss">
@@ -32,10 +30,11 @@
 
     .formField {
       height: 4rem;
-      width: 40rem;
+      max-width: 40rem;
 
       &-textArea {
-        min-height: 20rem;
+        min-height: 10rem;
+        max-width: 40rem;
       }
     }
   }

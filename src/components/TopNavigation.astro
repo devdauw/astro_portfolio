@@ -1,22 +1,24 @@
 <header>
-  <nav>
-    <div class="navLogoAndName">
-      <a href="/" class="linkBlock">
-        <img src="/assets/images/d_logo.svg" alt="" class="navLogo" />
-        <h1 class="displaySmallScreen">
-          <span class="navSurname">j</span><span class="navName">den</span>
+  <nav class="b-nav">
+    <div>
+      <a href="/" class="b-logo-name">
+        <img src="/assets/images/d_logo.svg" alt="" class="b-logo-name__logo" />
+        <h1 class="b-nav--small-screen">
+          <span class="b-logo-name__surname">j</span><span
+            class="b-logo-name__name">den</span
+          >
         </h1>
-        <h1 class="displayBigScreen">
-          <span class="navSurname">julien</span><span class="navName"
-            >dendauw</span
+        <h1 class="b-nav--big-screen">
+          <span class="b-logo-name__surname">julien</span><span
+            class="b-logo-name__name">dendauw</span
           >
         </h1>
       </a>
     </div>
-    <div class="navLinks">
-      <a class="displayBigScreen" href="/#aboutTitle">about</a>
+    <div class="b-nav__links">
+      <a href="/#aboutTitle" class="b-nav--big-screen">about</a>
       <a href="/thoughts">thoughts</a>
-      <a href="/#contact" class="linkAsButton">contact</a>
+      <a href="/#contact" class="b-nav__link-button">contact</a>
     </div>
   </nav>
 </header>
@@ -26,98 +28,95 @@
     grid-area: header;
   }
 
-  nav {
+  .b-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     height: 100%;
-    margin: 0 2em;
+    align-items: center;
+    margin: 0 2rem;
 
-    .displaySmallScreen,
-    .displayBigScreen {
+    .b-nav--small-screen,
+    .b-nav--big-screen {
       margin: 0;
     }
 
-    .displayBigScreen {
+    .b-nav--big-screen {
       display: none;
     }
 
     @media screen and (min-width: 1260px) {
       justify-content: space-around;
-      padding: 0; /* We can remove the padding since items will be centered */
 
-      .displaySmallScreen {
+      .b-nav--small-screen {
         display: none;
       }
 
-      .displayBigScreen {
+      .b-nav--big-screen {
         display: inline;
       }
     }
 
-    .navLogoAndName {
-      .linkBlock {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
+    .b-logo-name {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
 
-        .navLogo {
-          display: none;
+      &__logo {
+        display: none;
+        width: 5rem;
+        height: 5rem;
+        padding: 0.3rem;
+        margin-right: 2.5rem;
+        border-radius: 1rem;
+        border: 0.2rem solid var(--link);
 
-          @media screen and (min-width: 1260px) {
-            display: inline;
-            width: 5rem;
-            height: 5rem;
-            padding: 0.3rem;
-            margin-right: 2.5rem;
-            border-radius: 1rem;
-            border: 0.2rem solid var(--link);
-          }
+        @media screen and (min-width: 1260px) {
+          display: inline;
         }
+      }
 
-        .navSurname {
-          color: var(--blue-lite);
-          transition: color 0.5s;
-        }
-        .navName {
+      &__surname {
+        color: var(--blue-lite);
+        transition: color 0.5s;
+      }
+
+      &__name {
+        color: var(--accent);
+        transition: color 0.5s;
+      }
+
+      &:hover,
+      &:focus {
+        .b-logo-name__surname {
           color: var(--accent);
-          transition: color 0.5s;
         }
-
-        &:hover,
-        &:focus {
-          .navSurname {
-            color: var(--accent);
-          }
-          .navName {
-            color: var(--blue-lite);
-          }
+        .b-logo-name__name {
+          color: var(--blue-lite);
         }
       }
     }
 
-    .navLinks {
-      @media screen and (min-width: 1260px) {
-        display: block;
-      }
+    &__links {
       a {
         position: relative;
         font-size: 2rem;
-        font-weight: 500;
         color: var(--link);
         text-decoration: none;
-        letter-spacing: 0.1rem;
-        text-shadow: 0 0 0.1rem rgb(255 255 255 / 30%);
 
-        &:not(:last-child)::after {
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+
+        &::after {
+          content: "";
           position: absolute;
           top: calc(100% + 1rem);
           left: 0;
           width: 100%;
           height: 0.2rem;
           background: rgba(0, 0, 0, 0.1);
-          content: "";
           opacity: 0;
+
           -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
           -moz-transition: opacity 0.3s, -moz-transform 0.3s;
           transition: opacity 0.3s, transform 0.3s;
@@ -126,8 +125,8 @@
           transform: translateY(1rem);
         }
 
-        &:not(:last-child):hover,
-        &:not(:last-child):focus {
+        &:hover,
+        &:focus {
           color: var(--accent);
 
           &::after {
@@ -139,44 +138,47 @@
         }
       }
 
-      :not(:last-child) {
-        margin-right: 2rem;
-      }
-
-      .linkAsButton {
-        position: relative;
-        display: inline-block;
-        color: var(--white);
-        background-color: var(--blue-lite);
-        padding: 0.5rem 3.5rem;
-        @media screen and (min-width: 1260px) {
-          padding: 1.25rem 5rem;
-        }
-        border-radius: 1rem;
-        transition: background-color 0.3s;
-        border: solid 1px transparent;
-
-        &::before {
-          position: absolute;
-          content: "\279C";
-          font-size: 2rem;
-
-          left: 75%;
-          opacity: 0;
-          transition: all 0.3s, transform 0.3s;
-        }
-
-        &:hover,
-        &:focus {
-          background-color: var(--white);
-          color: var(--blue-lite);
-          border: solid 1px var(--blue-lite);
+      @media screen and(min-width: 1260px) {
+        .b-nav__link-button {
+          position: relative;
+          display: inline-block;
+          color: var(--white);
+          background-color: var(--blue-lite);
+          padding: 0.5rem 3.5rem;
+          @media screen and (min-width: 1260px) {
+            padding: 1.25rem 5rem;
+          }
+          border-radius: 1rem;
+          transition: background-color 0.3s;
+          border: solid 1px transparent;
 
           &::before {
-            -webkit-transform: translateX(0.5rem);
-            -moz-transform: translateX(0.5rem);
-            transform: translateX(0.5rem);
-            opacity: 1;
+            position: absolute;
+            content: "\279C";
+            font-size: 2rem;
+
+            left: 75%;
+            opacity: 0;
+            transition: all 0.3s, transform 0.3s;
+          }
+
+          &:hover,
+          &:focus {
+            background-color: var(--white);
+            color: var(--blue-lite);
+            border: solid 1px var(--blue-lite);
+
+            &::before {
+              -webkit-transform: translateX(0.5rem);
+              -moz-transform: translateX(0.5rem);
+              transform: translateX(0.5rem);
+              opacity: 1;
+            }
+
+            // So our button does not get the animated underline when hovered on a large screen
+            &::after {
+              opacity: 0;
+            }
           }
         }
       }

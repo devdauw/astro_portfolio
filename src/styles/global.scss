@@ -101,12 +101,16 @@ body {
   color: var(--black);
 
   display: grid;
-  grid-template-rows: 7.5vh auto auto auto;
+  grid-template-rows: fit-content auto auto auto;
   grid-template-areas:
     "header"
     "hero"
     "main"
     "footer";
+
+  @media screen and (min-width: 1260px) {
+    grid-template-rows: 7.5vh auto auto auto;
+  }
 
   &::after {
     @media screen and (min-width: 1920px) {
@@ -147,7 +151,8 @@ body {
 
   main {
     grid-area: main;
-    margin: 2em 1em;
+    margin: 2rem 1rem;
+    max-width: calc(100vw - 1rem);
 
     @media screen and (min-width: 1920px) and (max-width: 2560px) {
       margin: 3em auto;
