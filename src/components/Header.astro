@@ -1,0 +1,188 @@
+<header class="b-header">
+  <nav class="b-nav">
+    <div>
+      <a href="/" class="b-logo-name">
+        <img src="/assets/images/d_logo.svg" alt="" class="b-logo-name__logo" />
+        <h1 class="b-nav--small-screen">
+          <span class="b-logo-name__surname">j</span><span
+            class="b-logo-name__name">den</span
+          >
+        </h1>
+        <h1 class="b-nav--big-screen">
+          <span class="b-logo-name__surname">julien</span><span
+            class="b-logo-name__name">dendauw</span
+          >
+        </h1>
+      </a>
+    </div>
+    <div class="b-nav__links">
+      <a href="/#aboutTitle" class="b-nav--big-screen">about</a>
+      <a href="/thoughts">thoughts</a>
+      <a href="/#contactTitle" class="b-nav__link-button">contact</a>
+    </div>
+  </nav>
+</header>
+
+<style lang="scss">
+  .b-header {
+    grid-area: header;
+  }
+
+  .b-nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    margin: 0 1rem;
+
+    .b-nav--small-screen,
+    .b-nav--big-screen {
+      margin: 0;
+    }
+
+    .b-nav--big-screen {
+      display: none;
+    }
+
+    @media screen and (min-width: 1260px) {
+      justify-content: space-around;
+      margin: 0 2rem;
+
+      .b-nav--small-screen {
+        display: none;
+      }
+
+      .b-nav--big-screen {
+        display: inline;
+      }
+    }
+
+    .b-logo-name {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      &__logo {
+        display: none;
+        width: 5rem;
+        height: 5rem;
+        padding: 0.3rem;
+        margin-right: 2.5rem;
+        border-radius: 1rem;
+        border: 0.2rem solid var(--link);
+
+        @media screen and (min-width: 1260px) {
+          display: inline;
+        }
+      }
+
+      &__surname {
+        color: var(--blue-lite);
+        transition: color 0.5s;
+      }
+
+      &__name {
+        color: var(--accent);
+        transition: color 0.5s;
+      }
+
+      &:hover,
+      &:focus {
+        .b-logo-name__surname {
+          color: var(--accent);
+        }
+        .b-logo-name__name {
+          color: var(--blue-lite);
+        }
+      }
+    }
+
+    &__links {
+      a {
+        position: relative;
+        font-size: 2rem;
+        color: var(--link);
+        text-decoration: none;
+
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: calc(100% + 1rem);
+          left: 0;
+          width: 100%;
+          height: 0.2rem;
+          background: rgba(0, 0, 0, 0.1);
+          opacity: 0;
+
+          -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+          -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+          transition: opacity 0.3s, transform 0.3s;
+          -webkit-transform: translateY(1rem);
+          -moz-transform: translateY(1rem);
+          transform: translateY(1rem);
+        }
+
+        &:hover,
+        &:focus {
+          color: var(--accent);
+
+          &::after {
+            opacity: 1;
+            -webkit-transform: translateY(0rem);
+            -moz-transform: translateY(0rem);
+            transform: translateY(0rem);
+          }
+        }
+      }
+
+      @media screen and(min-width: 1260px) {
+        .b-nav__link-button {
+          position: relative;
+          display: inline-block;
+          color: var(--white);
+          background-color: var(--blue-lite);
+          padding: 0.5rem 3.5rem;
+          @media screen and (min-width: 1260px) {
+            padding: 1.25rem 5rem;
+          }
+          border-radius: 1rem;
+          transition: background-color 0.3s;
+          border: solid 1px transparent;
+
+          &::before {
+            position: absolute;
+            content: "\279C";
+            font-size: 2rem;
+
+            left: 75%;
+            opacity: 0;
+            transition: all 0.3s, transform 0.3s;
+          }
+
+          &:hover,
+          &:focus {
+            background-color: var(--white);
+            color: var(--blue-lite);
+            border: solid 1px var(--blue-lite);
+
+            &::before {
+              -webkit-transform: translateX(0.5rem);
+              -moz-transform: translateX(0.5rem);
+              transform: translateX(0.5rem);
+              opacity: 1;
+            }
+
+            // So our button does not get the animated underline when hovered on a large screen
+            &::after {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

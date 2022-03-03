@@ -1,0 +1,50 @@
+<section class="b-contact">
+  <h2 id="contactTitle">Contact form</h2>
+  <form
+    class="b-contact-form"
+    name="contact_dendauw.tech"
+    method="POST"
+    data-netlify="true"
+  >
+    <div class="b-contact-form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" class="b-form__text-field" />
+    </div>
+    <div class="b-contact-form-group">
+      <label for="email">Email</label><input
+        type="email"
+        name="email"
+        class="b-form__text-field"
+      />
+    </div>
+    <div class="b-contact-form-group">
+      <label for="message">Message</label>
+      <textarea name="message" class="b-form__text-area"></textarea>
+    </div>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<style lang="scss">
+  .b-contact {
+    grid-area: contact;
+    width: 100%;
+    max-width: 70ch;
+
+    &-form-group {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0;
+    }
+  }
+
+  .b-form {
+    &__text-field {
+      height: 3rem;
+    }
+
+    &__text-area {
+      min-height: 10rem;
+    }
+  }
+</style>
