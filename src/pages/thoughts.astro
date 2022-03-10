@@ -60,9 +60,8 @@ const title = "Julien's thoughts";
   </head>
   <body>
     <Header />
-    <main>
+    <section>
       <div class="thoughtsIntro center">
-        <img src="/assets/images/avatar.jpg" alt="" class="thoughtsImage" />
         <p class="thoughtsText">
           Thoughts by <a href="/">Julien Dendauw</a>.
           <br />More of a journal than a blog.
@@ -80,12 +79,16 @@ const title = "Julien's thoughts";
           return <ThoughtCard post={post} />;
         }
       })}
-    </main>
+    </section>
     <Footer />
   </body>
 </html>
 
 <style lang="scss">
+  section {
+    grid-area: about;
+  }
+  
   .thoughtsIntro {
     margin: 30px 0;
 
